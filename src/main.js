@@ -24,3 +24,21 @@ document.addEventListener('scroll', () => {
     arrowUp.style.opacity = 0;
   }
 });
+
+const navbarMenu = document.querySelector('.header__menu');
+const navbarToggle = document.querySelector('.header__toggle');
+const mobileMenuIcon = document.querySelector('.mobileMenuIcon');
+navbarToggle.addEventListener('click', () => {
+  navbarMenu.classList.toggle('open');
+  toggleMobileMenuIcon();
+});
+
+navbarMenu.addEventListener('click', () => {
+  navbarMenu.classList.remove('open');
+  toggleMobileMenuIcon();
+});
+
+function toggleMobileMenuIcon() {
+  mobileMenuIcon.classList.toggle('fa-bars');
+  mobileMenuIcon.classList.toggle('fa-circle-xmark');
+}
